@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Task 5- even number sum   </title>
+    </head>
+    <body>
+        <button id="btncreate"> create array</button>
+        <button id="btnaddtoArray">Add To Array</button>
+        <button id="btnAddThree">Add Three to each index</button>
+        <button id="btnfrom20to40">print from 20 to 40 index</button>
+        <button id="descending">sort array (descending)</button>
+
+        <div>
+        </div>
+    </body>
+    <script>
+       const btn1 = document.querySelector("#btncreate");
+       const btn2 = document.querySelector("#btnaddtoArray");
+       const btn3=document.querySelector("#btnAddThree");
+       const btn4=document.querySelector("#btnfrom20to40");
+       const btn5=document.querySelector("#descending");
+
+
+       btn1.addEventListener("click",createArrWithoutDivisible3);
+       btn2.addEventListener("click",addToArray);
+       btn3.addEventListener("click",addThreeToArray);
+       btn4.addEventListener("click",printFrom20To40);
+       btn5.addEventListener("click",sortArrayDes);
+
+
+       function createArrWithoutDivisible3(){
+        const arr=[];
+        for(let i=0;i<101;i++){
+            if(i%3 != 0){
+                arr.push(i);
+            }
+        }
+        console.log("createArrWithoutDivisible3: ")
+        printArray(arr);
+       }
+       function createArray(){
+        const arr=[];
+        for(let i=0;i<101;i++)
+        {
+            arr.push(i);
+        }
+        return arr;
+        }
+       function addToArray(){
+        const arr = createArray();
+        for(let i=arr.length; i<=150 ;i++){
+            arr.push(i);
+        }
+        console.log("addToArray: ")
+        printArray(arr);
+       }
+       function printArray(arr){
+        console.log(arr.join(", "));
+       }
+      function addThreeToArray(){
+        const arr = createArray();
+        for(let i=0 ;i<arr.length ;i++){
+            arr[i]+=3;
+        }
+        console.log("addThreeToArray: ")
+        printArray(arr);
+       }
+function printFrom20To40(){
+    const arr = createArray();
+    const arr2=[];
+    for(let i= 20 ; i<=40 ;i++){
+        arr2.push(arr[i]);
+    }
+    console.log("printFrom20To40")
+    printArray(arr2);
+}
+function sortArrayDes(){
+let arr= createArray();
+arr=shuffleDes(arr);
+console.log("sortArrayDes");
+printArray(arr);
+}
+function shuffleDes(arr){
+    const lastIndex=arr.length-1;
+    for(let i = 0;i<arr.length/2 ;i++){
+    [arr[i],arr[lastIndex-i]]=[arr[lastIndex-i],arr[i]];
+    
+    
+    }
+   
+    return arr;
+}
+    </script>
+</html>
