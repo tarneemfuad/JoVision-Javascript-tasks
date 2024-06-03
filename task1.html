@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2- print hello world </title>
+    </head>
+    <body>
+        <button id="show">Click me</button>
+        <h3 class="text" style="display: none;">Hello World</h3>
+    </body>
+ <script>
+   const btn = document.querySelector("#show");
+  const text = document.querySelector(".text");
+   btn.addEventListener("click",printHello);
+   function printHello(){
+    text.style.display = "block";
+    console.log("Hello world");
+   }
+ </script>    
+</html>
