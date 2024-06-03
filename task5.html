@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Task 5- even number sum   </title>
+    </head>
+    <body>
+        <button id="btnsum"> Click me</button>
+        <div>
+            <span>Summation</span> <span class="textsum" style="color: blue; display:none ;"></span>
+        </div>
+    </body>
+    <script>
+       const btn = document.querySelector("#btnsum");
+       const textsum = document.querySelector(".textsum");
+       btn.addEventListener("click",Sum);
+       function Sum(){
+        const arr=[];
+        let sum=0;
+        for(let i=0;i<101;i++){
+            arr.push(i);
+            if(i%2 == 0){
+            sum += i;
+            }
+        }
+        textsum.textContent = sum;
+        textsum.style.display="inline";
+       }
+    </script>
+</html>
