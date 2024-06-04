@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title>task 12</title>
+    </head>
+    <style>
+     .popupWindows{
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border: 2px solid #000;
+     }
+    </style>
+    <body>
+        <form>
+            <label>
+                Your Name <input type ="text" id="name" placeholder="Enter Your Name">
+            </label>
+            <label>
+                Your Age <input type="number" id="age" placeholder="Enter a number">
+            </label>
+            <button type="submit" id="submitBtn">submit</button>
+        </form>
+        <div id="popupWindows" class="popupWindows">
+           <h3 id="nameShow"></h3>
+           <h3 id="AgeShow"></h3>
+           <h3 id="timeStamp"></h3>
+
+        </div>
+    </body>
+    <script>
+        const btn =document.querySelector("#submitBtn");
+        const popupWindows = document.querySelector("#popupWindows");
+        popupWindows.style.display="Block"
+        btn.addEventListener("click",openPopup);
+        function openPopup(event){
+            event.preventDefault();
+            let name=document.querySelector("#name").value;
+            let age=document.querySelector("#age").value;
+            let nameShow=document.querySelector("#nameShow");
+            let AgeShow=document.querySelector("#AgeShow");
+            let timeStamp=document.querySelector("#timeStamp");
+            nameShow.textContent="Name: "+name;
+            AgeShow.textContent="Age: "+age;
+            timeStamp.textContent ="time stamp: "+new Date().toLocaleString();
+        }
+    </script>
+</html>
