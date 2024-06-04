@@ -11,12 +11,10 @@
      btn.addEventListener("click",getIp);
      
     async function getIp(){
-        try {
+        
         let fetchResponse = await fetch("https://api.ipify.org?format=json");
         fetchResponse.then(res => res.json()).then(data => {btn.textContent=data.ip});
-     }catch(error){
-        alert("can't fetch IP Address");
-     }
+     
     }
     </script>
 </html>
