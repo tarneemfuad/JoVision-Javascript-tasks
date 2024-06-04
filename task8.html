@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>task8 - get ip</title>
+    </head>
+    <body>
+      <button id="ip">Get ip -- json</button>
+    </body>
+    <script>
+     const btn = document.querySelector("#ip");
+     btn.addEventListener("click",getIp);
+     function getIp(){
+        let fetchResponse = fetch("https://api.ipify.org?format=json");
+        fetchResponse.then(res => res.json()).then(data => {console.log(data.ip)});
+     }
+    </script>
+</html>
