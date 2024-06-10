@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>task8 - get ip</title>
+    </head>
+    <body>
+      <button id="ip">Get ip</button>
+    </body>
+    <script>
+     const btn = document.querySelector("#ip");
+     btn.addEventListener("click",getIp);
+     
+    async function getIp(){
+        try {
+        let fetchResponse = await fetch("https://api.ipify.org?format=json");
+        fetchResponse.then(res => res.json()).then(data => {btn.textContent=data.ip});
+     }catch(error){
+        alert("can't fetch IP Address");
+     }
+    }
+    </script>
+</html>
